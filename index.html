@@ -6,7 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="./css/index.css">
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 		<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
 		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 		<link href="./favicon.ico" rel="shortcut icon">
 		<script type="text/javascript">
@@ -15,6 +15,7 @@
 				$("#mainbox").hide();
 				document.onreadystatechange=function()
 				{
+					console.log(document.readyState);
 					if(document.readyState == 'complete')
 					{
 						$("#loading").hide();
