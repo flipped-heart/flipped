@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>Simply Music</title>
+	<meta charset="utf-8">
+	<meta name="viewport" 
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link href="./favicon.ico" rel="shortcut icon">
+</head>
+<body>
+	<div id="mainbox">
+		<!-- 背景 -->
+		<div id="bg_img"></div>
+		<!-- 导航 -->
+		<div id="nav" class="clearfloat">
+			<div id="back">
+				<img src="icon/back.png">
+			</div>
+			<div id="title">
+				<span id='song'>有的时候</span>
+				<span id="singer">王大毛</span>
+			</div>
+			
+			<div id="reload">
+				<img src="icon/reload.png">
+			</div>
+		</div>
+		
+		<!-- 音量 -->
+		<div id="volume_bar">
+			<div id="sound">
+				<img src="icon/sound.png">	
+			</div>
+			<div id="whole_volume">
+				<div id="current_volume"></div>
+				<div id="volume_dot"></div>
+			</div>
+		</div>
+	
+		<!-- 展示区 -->
+		<div id="show">
+			<!-- 专辑 -->
+			<div id="CD">
+				<div id="CD_cover" class="CD_animation"></div>
+				<div id="circle"></div>
+			</div>
+			<!-- 歌词 -->
+			<div id="lrc">
+				<p id="tip"></p>
+				<ul id="lrc_text"></ul>
+			</div> 
+			<!-- 标题 -->
+			<div id="simply_music">
+				<p>simply music</p>
+			</div>
+		</div>
+
+		<!-- 功能区 -->
+		<div id="function">
+			<div id="interact">
+				<img src="icon/heart.png" id="heart">
+				<img src="icon/add.png" id="add">
+				<img src="icon/download.png" id="download">
+				<img src="icon/search.png" id="search">
+			</div>
+			<audio src="music/youdeshihou.mp3"  id="audio" preload="auto"></audio>
+			<div id="progress_bar" class="clearfloat">
+				<div id="current_time">
+					<span>00:00</span>
+				</div>
+				<div id="whole_bar">
+					<div id="current_bar"></div>
+					<div id="dot"></div>
+				</div>
+				<div id="end_time">
+					<span>00:00</span>
+				</div>
+			</div>
+			<div id="control" class="clearfloat">
+				<div id="mode">
+					<img src="icon/songs.png">
+				</div>
+				<div id="pre">
+					<img src="icon/pre.png">
+				</div>
+				<div id="pause_play">
+					<img src="icon/play.png">
+				</div>
+				<div id="next">
+					<img src="icon/next.png">
+				</div>
+				<div id="menu">
+					<img src="icon/menu.png">
+				</div>
+			</div>
+		</div>
+
+		<!--歌曲管理  -->
+		<div id="list">
+			<img src="icon/close2.png" id='-1'>
+			<p id="0">有的时候-王大毛</p>
+			<p id="1">光年之外-邓紫祺</p>
+			<p id="2">魔鬼中的天使-田馥甄</p>
+		</div>
+		<div id="append">
+			<img src="icon/close2.png">
+			<form action="add_song.php" method="post" enctype="multipart/form-data">
+				<input type="text" name="song" placeholder="请输入歌曲名">
+				<input type="text" name="singer" placeholder="请输入歌手名">
+				<label for="file_image">请选择专辑图片</label>
+					<input type="file" name="image" id="file_image">
+				<label for="file_address">请选择歌曲文件</label>
+					<input type="file" name="address" id="file_address">
+				<label for="file_lrc">请选择歌词文件</label>
+					<input type="file" name="lrc" id="file_lrc">
+				<button type="submit">确认</button>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/index.js"></script>
+
+</body>
+</html>

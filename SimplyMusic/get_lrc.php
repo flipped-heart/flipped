@@ -1,0 +1,29 @@
+<?php
+	if(isset($_GET['song_name']))
+	{
+		$song_name=$_GET['song_name'];
+		if(@fopen('lrc/'.$song_name.'.lrc','r')!=false)//@隐藏错误信息
+		{
+			$lrc=file('lrc/'.$song_name.'.lrc',FILE_SKIP_EMPTY_LINES);
+			$res=array(
+				'status'=>1,
+				'lrc'=>$lrc
+			);
+		}
+		else
+		{
+			$res=array(
+				'status'=>-1,
+				'lrc'=>null
+			);
+		}
+	}
+	else
+	{
+		$res=array(
+			'status'=>-1,
+			'lrc'=>null
+		);
+	}
+	echo json_encode($res);
+?>

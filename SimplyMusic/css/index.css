@@ -1,0 +1,554 @@
+/**
+ * Simply Music
+ * 界面UI
+ */
+
+*{
+	margin:0;
+	padding:0;
+}
+body
+{
+	overflow: hidden;
+	background-color: lightblue;
+}
+#mainbox
+{
+	width: 100vw;
+	height: 186vw;
+	position: relative;
+}
+#bg_img
+{
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 100vw;
+	height: 190vw;
+	background-image: url("../img/youdeshihou.jpg");
+	z-index: -10;
+	background-size:100% 100%;
+	filter: blur(100px);
+}
+
+/*清除浮动*/
+.clearfloat:after
+{
+	content: "";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+.clearfloat
+{
+	zoom:1;
+ }
+
+/*首部导航*/
+#nav
+{
+	width: 98vw;
+	height: 18vw;
+	margin:0 auto;
+	z-index: 10;
+	filter: blur(0);
+}
+
+/*搜索歌曲*/
+#back,#reload
+{
+	width: 17vw;
+	height:18vw;
+	float: left;
+}
+#back img,#reload img
+{
+	margin:5vw;
+	width: 6vw;
+	height: 6vw;
+}
+
+
+/*歌曲名*/
+#title
+{
+	text-align: center;
+	width: 64vw;
+	height:18vw;
+	float: left;
+}
+#song
+{
+	font-size: 5vw;
+	color: snow;
+	width: 64vw;
+	height:8vw;
+	margin-top: 5vw;
+	color: black;
+	display: block;
+	font-weight:600;
+	text-shadow: 1px 1px 5px snow;
+}
+#singer
+{
+	font-size: 4vw;
+	color: snow;
+	width: 64vw;
+	margin-top: 3vw;
+	height:4vw;
+	font-weight:600;
+	color: black;
+	text-shadow: 1px 1px 5px snow;
+}
+
+/* 音量 */
+#volume_bar
+{
+	width: 98vw;
+	margin:1vw auto;
+	height:10vw;
+	overflow: hidden;
+}
+#whole_volume
+{
+	width: 78vw;
+	height:0.5vw;
+	background-color: rgb(210,210,210);
+	float: left;
+	margin:4.5vw auto;
+	position:relative;
+}
+#current_volume
+{
+	width: 0vw;
+	height:0.5vw;
+	background-color: rgb(250,250,250);
+}
+#sound
+{
+	width: 4vw;
+	height:4vw;
+	margin:3vw 4vw;
+	float: left;
+	border-radius: 50%;
+	position: relative;
+}
+#sound img
+{
+	width:100%;
+	height:100%;
+	border-radius: 50%;
+}
+#volume_dot
+{
+	width: 2.5vw;
+	height:2.5vw;
+	top:-1vw;
+	left:-1vw;
+	border-radius:50%;
+	position: absolute;
+	background-color:rgb(250,250,250);
+}
+.dot_animation
+{
+	animation:0.5s dot_scale linear;
+}
+@keyframes dot_scale
+{
+	from
+	{
+		transform: scale(1.5,1.5);
+	}
+	to
+	{
+		transform: scale(1.0,1.0);
+	}
+}
+
+/* 展示区 */
+#show
+{
+	width: 98vw;
+	height: 100vw;
+	margin:auto;
+	padding-top:7vw;
+}
+
+/*CD专辑*/
+#CD
+{
+	width: 70vw;
+	height: 70vw;
+	margin:auto;
+	position: relative;
+	overflow: hidden;
+	z-index: 10;
+	border-radius: 50%;
+	background-image: url("../img/CD.png");
+	background-size: 100% 100%;
+	filter: blur(0);
+	border:3px rgb(155,155,155) solid;
+}
+#CD_cover
+{
+	width: 50vw;
+	height:50vw;
+	background-image: url("../img/youdeshihou.jpg");
+	background-size: 100% 100%;
+	border-radius: 50%;
+	overflow: hidden;
+	margin:10vw;
+}
+#circle
+{
+	width: 10vw;
+	height: 10vw;
+    left:30vw; 
+    top: 30vw;
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+	background-image:url("../img/CD.png");
+	background-size: 100% 100%;
+}
+
+/* 歌词 */
+#lrc
+{
+	width: 80vw;
+	margin:auto;
+	height:90vw;
+	position: relative;
+	display: none;
+	overflow:hidden;
+	text-align: center;
+}
+#tip
+{
+	position: absolute;
+	width: 60vw;
+	left: 10vw;
+	color: rgb(250,250,250);
+	text-align: center;
+	font-size:3.5vw;
+}
+#tip a
+{
+	color: red;
+}
+/* 去除滚动条 */
+::-webkit-scrollbar{
+	display: none;
+}
+	/* overflow-x: scroll; 显示横向滚动条 */ 
+	/* overflow-y: hidden; 去掉纵向滚动条 */ 
+#lrc_text
+{
+	overflow: scroll;
+	overflow-x:hidden;
+	font-size:3.5vw;
+	width: 80vw;
+	height: 85vw;
+	margin-top:5vw;
+	display: block;
+	transition:0.5s;
+	line-height: 200%;
+	list-style: none;
+	transition: 0.5s;
+	color: rgb(250,250,250);
+}
+#lrc_text li
+{
+	transform: translateY(40vw);
+}
+.CD_animation
+{
+	animation: CD_rotate 10s infinite linear;
+	animation-play-state: paused;
+}
+
+/*CD旋转*/
+@keyframes CD_rotate
+{
+	from
+	{
+		transform: rotate(0deg);
+	}
+	to
+	{
+		transform: rotate(360deg);
+	}
+}
+
+/*simply_music*/
+#simply_music
+{
+	width: 80vw;
+	height:8vw;
+	text-align: center;
+	position: absolute;
+	top: 125vw;
+	left:10vw;
+}
+#simply_music p
+{
+	font-size:7vw;
+	font-weight: bold;
+	text-shadow: 1px 1px 8px snow;
+	color: rgb(114,141,151);
+
+}
+
+/*function功能区*/
+#function
+{
+	width: 98vw;
+	height: 54vw;
+	margin:1vw auto;
+	z-index: 10;
+	filter: blur(0);
+}
+
+/* 图标缩放 */
+.img_animation
+{
+	animation:0.1s img_scale linear;
+}
+@keyframes img_scale
+{
+	from
+	{
+		transform: scale(1.1,1.1);
+		opacity:0.75;
+	}
+	to
+	{
+		transform: scale(1.0,1.0);
+		opacity:1;
+	}
+}
+
+/*交互区*/
+#interact
+{
+	width: 98vw;
+	height:18vw;
+	text-align: center;
+}
+#heart,#search,#add,#download
+{
+	width: 6vw;
+	height:6vw;
+	margin:6vw 8vw;
+}
+
+/*进度条*/
+#progress_bar
+{
+	width: 98vw;
+	margin:1vw auto;
+	height:14vw;
+	overflow: hidden;
+}
+#current_time
+{
+	width: 14vw;
+	height: 10vw;
+	margin:2vw 2.5vw;
+	float: left;
+	text-align: center;
+}
+#current_time span
+{
+	display: block;
+	font-size:3vw;
+	font-weight: bold;
+	text-shadow: 1px 1px 8px snow;
+	font-family: '仿宋';
+	margin: 3vw auto;
+}
+#whole_bar
+{
+	width: 60vw;
+	height:0.5vw;
+	background-color: rgb(210,210,210);
+	float: left;
+	margin:6.5vw auto;
+	position:relative;
+}
+#current_bar
+{
+	width: 0;
+	height:0.5vw;
+	background-color: rgb(250,250,250);
+}
+#end_time
+{
+	width: 14vw;
+	text-shadow: 1px 1px 8px snow;
+	height: 10vw;
+	margin:2vw 2.5vw;
+	float: left;
+}
+#end_time span
+{
+	display: block;
+	font-size:3vw;
+	font-weight: bold;
+	text-shadow: 1px 1px 8px snow;
+	font-family: '仿宋';
+	margin: 3vw auto;
+}
+#dot
+{
+	width: 2.5vw;
+	height:2.5vw;
+	top:-1vw;
+	left:-1vw;
+	border-radius:50%;
+	position: absolute;
+	background-color:rgb(250,250,250);
+}
+
+
+/*控制按钮*/
+#control
+{
+	margin:2vw auto;
+	width: 98vw;
+	height:20vw;
+	overflow: hidden;
+}
+#control img
+{
+	width:100%;
+	height:100%;
+	border-radius: 50%;
+}
+#mode
+{
+	width: 7vw;
+	height:7vw;
+	float: left;
+	margin:6.5vw 7vw;
+	border-radius: 50%;
+}
+#pre
+{
+	width: 7vw;
+	height:7vw;
+	float: left;
+	margin:6.5vw 5.5vw;
+	border-radius: 50%;
+}
+#pause_play
+{
+	width: 13vw;
+	height:13vw;
+	float: left;
+	margin:4vw;
+	border-radius: 50%;
+}
+#next
+{
+	width: 7vw;
+	height:7vw;
+	float: left;
+	border-radius: 50%;
+	margin:6.5vw 5.5vw;
+}
+
+/*菜单*/
+#menu
+{
+	width: 14vw;
+	height:18vw;
+	float: left;
+	margin:1vw 3vw;
+}
+#menu img
+{
+	margin:5vw 2vw;
+	width: 7vw;
+	height: 7vw;
+}
+
+/* 列表 */
+#list
+{
+	position: absolute;
+	width: 94vw;
+	height: 80vw;
+	bottom: -5vw;
+	overflow: scroll;
+	overflow-x:hidden;
+	color: snow;
+	left: 3vw;
+	background-image: linear-gradient(rgba(121,143,164,1),rgba(192,166,133,1));
+	border-radius: 4vw;
+	display: none;
+}
+#list img
+{
+	display: block;
+	position: absolute;
+	width: 6vw;
+	height: 6vw;
+	left:85vw;
+	top:1vw;
+}
+#list p
+{
+	font-size: 4vw;
+	padding: 2vw;
+	display: block;
+	text-align: center;
+	width: 60vw;
+	margin:1vw 15vw;
+	border-bottom: 1px rgb(170,180,175) solid;
+	font-weight: 500;
+	font-family: '仿宋';
+}
+
+/* 添加歌曲 */
+#append
+{
+	position: absolute;
+	width: 80vw;
+	height: 95vw;
+	background-color: rgb(145,130,145);
+	top:25%;
+	left: 10vw;
+	z-index: 100;
+	text-align: center;
+	border-radius: 3vw;
+	font-size: 4vw;
+	display: none;
+}
+#append img
+{
+	display: block;
+	width: 6vw;
+	height: 6vw;
+	margin-left:73vw;
+	margin-top:1vw;
+}
+#append button
+{
+	width: 10vw;
+	height: 8vw;
+}
+#append label
+{
+	width: 60vw;
+	height: 4vw;
+	color: red;
+}
+#append input
+{
+	display: block;
+	width: 60vw;
+	margin:2vw 10vw;
+	height: 8vw;
+}
