@@ -12,14 +12,11 @@
 		<script type="text/javascript">
 			$(function()
 			{
-				$("#mainbox").hide();
 				document.onreadystatechange=function()
-				{
-					console.log(document.readyState);
+				{	
 					if(document.readyState == 'complete')
 					{
 						$("#loading").hide();
-					 	$("#mainbox").show();
 					}
 				}
 			});
