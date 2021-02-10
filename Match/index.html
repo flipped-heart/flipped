@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>让我们一起来Play！</title>
+		<link rel="stylesheet" type="text/css" href="./css/index.css">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<link href="./favicon.ico" rel="shortcut icon">
+		<script type="text/javascript">
+			$(function()
+			{
+				$("#mainbox").hide();
+				$(".front").hide();
+				document.onreadystatechange=function()
+				{
+					if(document.readyState == 'complete')
+					{
+						$("#loading").hide();
+					 	$("#mainbox").show();
+					}
+				}
+				init();
+			});
+			var img_num = 0;
+			var score = 0;
+			var interval=null;
+			var statue=0;
+			var second=30;
+			var perfect=30;
+		</script>
+	</head>
+	<body>
+		<div id='loading'>
+			<span>Loading </span><i class="fa fa-spinner fa-pulse fa-2x"></i>
+		</div>
+		<div id='mainbox' class="panel panel-danger">
+			<div id='nav' class="panel-heading">
+				<h3>点击开始组建Big Family！</h3>
+				<button class="btn btn-info" id='back' onclick="location.href='../index.html';">返回上页</button>
+				<button class="btn btn-danger" id='button' onclick="start();">立即开始</button>
+				<p id="time">30s</p>
+				<h4 id="rank">最高纪录：</h4>
+			</div>
+			<div id='content' class='container panel-body'>
+				<div class='row'>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='1' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='1'>
+					</div>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='2' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value="2">
+					</div>
+					<div class="clearfix visible-xs"></div>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='3' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='3'>
+					</div>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='4' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='4'>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-xs-6 col-sm-3 flip disabled'  data-id='5' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='5'>
+					</div>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='6' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front'value='6'>
+					</div>
+					<div class="clearfix visible-xs"></div>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='7' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='7'>
+					</div>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='8' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='8'>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='9' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='2'>
+					</div>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='10' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='1'>
+					</div>
+					<div class="clearfix visible-xs"></div>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='11' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img  class='front' value='3'>
+					</div>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='12' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='6'>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='13' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='7'> 
+					</div>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='14' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='5'>
+					</div>
+					<div class="clearfix visible-xs"></div>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='15' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='8'>
+					</div>
+					<div class='col-xs-6 col-sm-3 flip disabled' data-id='16' data-type='0'>
+						<img src="./img/0.png" class='back'>
+						<img class='front' value='4'>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src='./js/index.js'></script>
+	</body>
+</html>
