@@ -1,0 +1,77 @@
+
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	#mainbox
+	{
+		text-align: center;
+		background-image: url("../../img/bgimg.jpeg"); 
+		background-size:100%  100%;
+		background-repeat: no-repeat;
+	}
+	#loading
+	{
+		margin: 35px auto;
+		text-align: center;
+	}
+	#loading span
+	{
+		font-size: 25px;
+		font-family: '仿宋';
+		font-style: italic;
+	}
+	#nav{height: 220px;}
+	#button{margin: 5px auto;}
+	#time
+	{
+		font-size: 24px;
+		margin:auto;
+	}
+	#container .row{margin-bottom: 20px;}
+	#container
+	{
+		width: 700px;
+		height: 700px;
+		border-radius: 10px;
+		text-align: center;
+		/*background-image: url("../img/0.jpg"); */
+		background-size:100% 100%;
+		background-repeat: no-repeat;
+	}
+	#container img
+	{
+		border-radius: 5px;
+		width: 100%;
+		height: 100%;
+	}
+	.left
+	{
+		-webkit-transform:translateX(-175px);
+		transform:translateX(-175px);
+		-webkit-transition: 0.2s;
+		transition: 0.2s;
+	}
+	.right
+	{
+		-webkit-transform:translateX(155px);
+		transform:translateX(175px);
+		-webkit-transition: 0.2s;
+		transition: 0.2s
+	}
+	.up
+	{
+		-webkit-transform:translateY(-165px);
+		transform:translateY(-165px); 
+		-webkit-transition: 0.2s;
+		transition: 0.2s
+	}
+	.down
+	{
+		-webkit-transform:translateY(165px);
+		transform:translateY(165px);
+		-webkit-transition: 0.2s;
+		transition: 0.2s 
+	}
+	.disabled { pointer-events: none; }
+			
