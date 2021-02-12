@@ -109,9 +109,12 @@
 							{
 								perfect=t;
 							}
-							alert("Perfect!用时"+t+"s");
+							alert("Perfect!用时"+t+"s,正在重新生成...");
 							$("#rank").text("最高纪录："+perfect+'s');
-							refresh();
+							var tim = setTimeout(function(){
+								refresh();
+								clearTimeout(tim);
+							},3000);
 						}
 					}
 					else
