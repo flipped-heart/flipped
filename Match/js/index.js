@@ -2,9 +2,11 @@
 	function refresh()
 	{
 		statue = 0;
+		score = 0;
+		img_num = 0;
 		init();
 		$("#button").removeClass("disabled");
-		$("[data-type]").each(function()
+		$("[data-id]").each(function()
 		{
 			$(this).find(".front").hide();
 			$(this).find(".back").show();
@@ -17,11 +19,9 @@
 		if(statue == 0)
 		{
 			statue=1;
-			score = 0;
-			img_num = 0;
 			$("#time").text(30+'s');
 			second = 30;
-			$("[data-type]").each(function()
+			$("[data-id]").each(function()
 			{
 				$(this).removeClass("disabled");
 			});	
@@ -86,6 +86,7 @@
 								$(this).find(".front").hide();
 								$(this).find(".back").show();
 								$(this).removeClass("flipped");
+								$(this).attr("data-type",0);
 							});	
 						}
 						else
@@ -93,13 +94,10 @@
 							$("[data-type=1]").each(function()
 							{
 								$(this).addClass("disabled");
+								$(this).attr("data-type",0);
 							});	
 							score++;
-						}
-						$("[data-type=1]").each(function()
-						{
-							$(this).attr("data-type",0);
-						});	
+						}	
 						img_num=0;
 						if(score == 8)
 						{
