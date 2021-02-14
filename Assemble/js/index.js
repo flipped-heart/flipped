@@ -16,6 +16,7 @@
 		if(first ==0)
 		{
 			init();
+			$("#reback").removeClass('disabled');
 			first=1;
 		}
 		$("#button").addClass("disabled");

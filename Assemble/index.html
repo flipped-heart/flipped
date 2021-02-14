@@ -12,6 +12,7 @@
 		<script type="text/javascript">
 			$(function()
 			{
+				$("#reback").addClass('disabled');
 				document.onreadystatechange=function()
 				{
 					if(document.readyState == 'complete')
@@ -37,7 +38,7 @@
 				<p>若觉无解，重新生成！</p>
 				<button class="btn btn-info" id='back' onclick="location.href='../index.html';">返回上页</button>
 				<button class="btn btn-danger" id='button' onclick="start();">立即开始</button>
-				<button class="btn btn-warning" id='button' onclick="reback();">重新生成</button>
+				<button class="btn btn-warning" id='reback' onclick="reback();">重新生成</button>
 				<p id="time">0s</p>
 				<h4 id="rank">最高纪录：</h4>
 			</div>
