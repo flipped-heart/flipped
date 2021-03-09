@@ -36,9 +36,7 @@
 						alert("Game Over!");
 						refresh();
 					}
-				}
-				
-				
+				}	
 			},1000);
 			
 		}
@@ -52,7 +50,7 @@
 		{
 			var e=$("[data-id="+i+"]").find(".front");
 			var rand=Math.floor(Math.random()*len) + 1;
-			var url = "./img/"+value[rand]+".png";
+			var url = "./img/"+value[rand]+".jpg";
 			e.attr("src",url); 	
 			e.attr("value",value[rand]);
 			value.splice(rand,1);
@@ -112,7 +110,7 @@
 							var tim = setTimeout(function(){
 								refresh();
 								clearTimeout(tim);
-							},3000);
+							},1500);
 						}
 					}
 					else

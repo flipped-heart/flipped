@@ -3,6 +3,7 @@
 	{
 		statue = 0;
 		success = 0;
+		second = 0;
 		init();
 		clearInterval(interval);
 		$("#button").removeClass("disabled");
@@ -105,7 +106,7 @@
 			{
 				refresh();
 				clearTimeout(timer);
-			},3000);
+			},1500);
 		}
 	}
 
